@@ -29,7 +29,7 @@ val mainScenario = Scenario {
         action {
             val fileId = request.telegram?.message?.video?.fileId
             reactions.say("1. ${context.session["fileIdVse"]} + $fileId")
-            if (context.session["fileIdVse"] != fileId) {
+            if (context.session["fileIdVse"] != fileId && fileId != null) {
                 context.session["fileIdVse"] = fileId
                 reactions.say("2. ${context.session["fileIdVse"]}")
             }
