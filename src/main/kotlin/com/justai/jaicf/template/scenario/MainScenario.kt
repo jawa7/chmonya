@@ -2,6 +2,7 @@ package com.justai.jaicf.template.scenario
 
 import com.justai.jaicf.activator.caila.caila
 import com.justai.jaicf.builder.Scenario
+import com.justai.jaicf.channel.telegram.TelegramEvent
 import com.justai.jaicf.channel.telegram.telegram
 
 val mainScenario = Scenario {
@@ -23,6 +24,7 @@ val mainScenario = Scenario {
     state("sendVse") {
         activators {
             intent("Vse")
+            event(TelegramEvent.VIDEO)
         }
         action {
             val fileId = request.telegram?.message?.video?.fileId
