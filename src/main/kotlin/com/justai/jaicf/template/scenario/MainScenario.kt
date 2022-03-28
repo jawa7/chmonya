@@ -28,13 +28,16 @@ val mainScenario = Scenario {
         }
         action {
             val fileId = request.telegram?.message?.video?.fileId
+            reactions.say("1. ${context.session["fileIdVse"]} + $fileId")
             if (context.session["fileIdVse"] != fileId) {
                 context.session["fileIdVse"] = fileId
+                reactions.say("2. ${context.session["fileIdVse"]}")
             }
             if (context.session["fileIdVse"] != null) {
                 reactions.telegram?.sendVideo(context.session["fileIdVse"].toString())
             } else {
                 reactions.say("Извини, я сделал что-то не то(")
+                reactions.say("3. ${context.session["fileIdVse"]} + $fileId")
             }
         }
     }
