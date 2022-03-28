@@ -31,7 +31,7 @@ val mainScenario = Scenario {
             if (context.session["fileIdVse"] != fileId) {
                 context.session["fileIdVse"] = fileId
             }
-            if (fileId != null) {
+            if (context.session["fileIdVse"] != null) {
                 reactions.telegram?.sendVideo(context.session["fileIdVse"].toString())
             } else {
                 reactions.say("Извини, я сделал что-то не то(")
