@@ -25,7 +25,8 @@ val mainScenario = Scenario {
             intent("Vse")
         }
         action {
-            reactions.telegram?.sendVideo("https://web.telegram.org/z/progressive/msg-420242299-33507:5260305232075691524")
+            reactions.telegram?.sendVideo("https://www.youtube.com/watch?v=iEF9pTCHUOk")
+            reactions.telegram?.say("Все")
         }
     }
 
