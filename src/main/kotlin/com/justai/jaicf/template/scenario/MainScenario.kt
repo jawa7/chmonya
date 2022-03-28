@@ -25,8 +25,12 @@ val mainScenario = Scenario {
             intent("Vse")
         }
         action {
-            reactions.telegram?.sendVideo("https://www.youtube.com/watch?v=iEF9pTCHUOk")
-            reactions.telegram?.say("Все")
+            val fileId = request.telegram?.message?.video?.fileId
+            if (fileId != null) {
+                reactions.telegram?.sendVideo(fileId)
+            } else {
+                reactions.say("Lalala")
+            }
         }
     }
 

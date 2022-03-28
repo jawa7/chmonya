@@ -10,14 +10,11 @@ import com.justai.jaicf.template.accessToken
 import com.justai.jaicf.template.templateBot
 
 fun main() {
-//    JaicpPollingConnector(
-//        templateBot,
-//        accessToken,
-//        channels = listOf(
-//            TelegramChannel
-//        )
-//    ).runBlocking()
-    ConsoleChannel(
+    JaicpPollingConnector(
         templateBot,
-    ).run()
+        accessToken,
+        channels = listOf(
+            TelegramChannel
+        )
+    ).runBlocking()
 }
